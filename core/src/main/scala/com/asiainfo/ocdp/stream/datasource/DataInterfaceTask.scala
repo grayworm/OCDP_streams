@@ -253,6 +253,7 @@ class DataInterfaceTask(id: String, interval: Int) extends StreamTask {
       println("本批次记录条数：" + batchSize)
       try {
         cachemap_old = CacheFactory.getManager.getMultiCacheByKeys(keyList, qryCacheService).toMap
+	 println("cache map size:" + cachemap_old.size)
       } catch {
         case ex: Exception =>
           logError("= = " * 15 + " got exception in EventSource while get cache")
