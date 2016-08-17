@@ -78,6 +78,7 @@ class DataInterfaceTask(id: String, interval: Int) extends StreamTask {
         println("5.RDD 转换成 DataFrame 耗时(millis):" + (t5 - t4))
 
         makeEvents(enhancedDF, conf.get("uniqKeys"))
+	println("event uniqKeys:"+conf.get("uniqKeys"))
         println("6.所有业务营销 耗时(millis):" + (System.currentTimeMillis - t5))
       }
     })
